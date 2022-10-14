@@ -341,6 +341,7 @@ public class OrderBooking extends ApplicationUtility {
 		
 		extent.endTest(test);
 		extent.flush();
+		quitDriver(driver,test);
 
 	}
 
