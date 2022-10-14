@@ -44,6 +44,15 @@ public class OrderBooking extends ApplicationUtility {
 							+ "order validations and assertions of test data.");
 			test.log(LogStatus.INFO, "<b>Given : Open the url</b>");
 			driver = launchBrowser();
+			/*if(isElementDisplayed(objLandingPage.SignInLink, test))
+			{
+				test.log(LogStatus.PASS, "The landing page is opened properly ");
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "The landing page is not opened properly ");
+			}*/
+			
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
@@ -59,7 +68,7 @@ public class OrderBooking extends ApplicationUtility {
 			if (getDisplayedText(objLandingPage.EmptyCart, test).equalsIgnoreCase("(empty)")) {
 				test.log(LogStatus.PASS, "The cart is empty ");
 			} else {
-				test.log(LogStatus.PASS, "The cart is not empty ");
+				test.log(LogStatus.FAIL, "The cart is not empty ");
 			}
 
 			if(isElementDisplayed(objLandingPage.SignInLink, test))
@@ -68,7 +77,7 @@ public class OrderBooking extends ApplicationUtility {
 			}
 			else
 			{
-				test.log(LogStatus.PASS, "User is logged in ");
+				test.log(LogStatus.FAIL, "User is logged in ");
 			}
 		} catch (Exception e) {
 			System.out.println(e.toString());
@@ -76,7 +85,7 @@ public class OrderBooking extends ApplicationUtility {
 
 	}
 
-	@When("^Verify Search box is performing perfectly$")
+	/*@When("^Verify Search box is performing perfectly$")
 	public void verify_Search_box_is_performing_perfectly() {
 		try {
 
@@ -84,7 +93,7 @@ public class OrderBooking extends ApplicationUtility {
 			System.out.println(e.toString());
 		}
 
-	}
+	}*/
 
 	@When("^Perform multiple searches and add product to cart from each search\\.$")
 	public void perform_multiple_searches_and_add_product_to_cart_from_each_search() {
@@ -307,11 +316,11 @@ public class OrderBooking extends ApplicationUtility {
 
 	}
 
-	@Then("^The saved order details should display properly in Order history and details section$")
+/*	@Then("^The saved order details should display properly in Order history and details section$")
 	public void the_saved_order_details_should_display_properly_in_Order_history_and_details_section()
 			throws Throwable {
 
-	}
+	}*/
 
 	@Then("^Log out and validate that the user is logged out$")
 	public void log_out_and_validate_that_the_user_is_logged_out() throws Throwable {
@@ -326,7 +335,7 @@ public class OrderBooking extends ApplicationUtility {
 		}
 		else
 		{
-			test.log(LogStatus.PASS, "User is not logged out properly ");
+			test.log(LogStatus.FAIL, "User is not logged out properly ");
 		}
 		
 		
